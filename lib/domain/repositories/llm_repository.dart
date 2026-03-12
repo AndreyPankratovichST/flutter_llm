@@ -1,11 +1,11 @@
-import 'package:flutter_llm/domain/entities/message.dart';
+import 'package:flutter_llm/domain/entities/model_info.dart';
 
 abstract class LLMRepository {
-  Future<void> initModel();
+  Future<void> initModel(String modelPath);
 
   Future<void> disposeModel();
 
-  Future<void> sendMessage(Message message);
+  Stream<String> sendMessage(String text);
 
-  Stream<Message> listenMessages();
+  Future<ModelInfo> getModelInfo();
 }

@@ -1,12 +1,15 @@
+import 'package:flutter_llm/domain/core/usecase.dart';
 import 'package:flutter_llm/domain/repositories/llm_repository.dart';
 
-class LLMDisposeUsecase {
-  LLMDisposeUsecase({required LLMRepository repository})
+class LLMDisposeUseCase extends UseCaseNoParams<Unit> {
+  LLMDisposeUseCase({required LLMRepository repository})
     : _repository = repository;
 
   final LLMRepository _repository;
 
-  Future<void> execute() async {
+  @override
+  Future<Unit> execute() async {
     await _repository.disposeModel();
+    return Unit.instance;
   }
 }

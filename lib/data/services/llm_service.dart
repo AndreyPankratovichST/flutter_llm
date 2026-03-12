@@ -1,7 +1,11 @@
+import 'package:flutter_llm/domain/entities/model_info.dart';
+
 abstract class LLMService {
-  Future<void> loadModel();
+  Future<void> loadModel(String modelPath);
 
   Future<void> disposeModel();
 
-  Future<void> sendQuery(String query);
+  Stream<String> sendQuery(String query);
+
+  Future<ModelInfo> getModelInfo();
 }

@@ -1,18 +1,26 @@
-# flutter_llm
+# Flutter LLM
 
-A new Flutter project.
+Flutter-приложение для локального запуска больших языковых моделей (LLM) на мобильных устройствах.
 
-## Getting Started
+## Возможности
 
-This project is a starting point for a Flutter application.
+- Поиск моделей в каталоге HuggingFace с фильтрацией по типу задачи
+- Скачивание GGUF-файлов с поддержкой возобновления прерванных загрузок
+- Управление локальными моделями (просмотр, удаление)
+- Чат с моделью в реальном времени (стриминг токенов)
+- Просмотр технической информации о модели (архитектура, квантизация, размер контекста)
 
-A few resources to get you started if this is your first Flutter project:
+## Стек
 
-- [Learn Flutter](https://docs.flutter.dev/get-started/learn-flutter)
-- [Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Flutter learning resources](https://docs.flutter.dev/reference/learning-resources)
+- **Flutter** — кроссплатформенный UI
+- **llamadart** — обёртка над llama.cpp для инференса на устройстве
+- **flutter_bloc** — управление состоянием (BLoC)
+- **get_it** — внедрение зависимостей
+- **http** — сетевые запросы и загрузка файлов
+- **path_provider** — доступ к файловой системе
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
-# flutter_llm
+## Архитектура
+
+Проект построен по принципам Clean Architecture с разделением на слои Domain, Data и Presentation.
+
+Подробное описание архитектуры, используемых технологий и разбор каждого компонента — в [LECTURE.md](LECTURE.md).

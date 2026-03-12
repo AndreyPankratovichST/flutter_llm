@@ -1,6 +1,10 @@
 class Message {
-  Message({required this.text, required this.attachment});
+  Message({required this.text, required this.isUser});
 
   final String text;
-  final Object attachment;
+  final bool isUser;
+
+  Message copyWith({String? text, bool? isUser}) {
+    return Message(text: text ?? this.text, isUser: isUser ?? this.isUser);
+  }
 }
