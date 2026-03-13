@@ -38,6 +38,6 @@ hooks:
         platforms:
           android-arm64:
             backends: [vulkan]
-            cpu_profile: full # default: full; use compact for baseline-only CPU
+            cpu_profile: compact
           linux-x64: [vulkan, cuda]
           windows-x64: [vulkan, cuda]
